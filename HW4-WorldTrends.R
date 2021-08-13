@@ -33,15 +33,15 @@ stats.new <- data.frame(Code=Country_Code,
                         Life.Expectancy=Life_Expectancy_At_Birth_2013)
                         
 merged.1960 <- merge(1960stats, stats.old, 
-                     by.x="Country.Code", by.y="Code")        #refined merge
+                     by.x="Country.Code", by.y="Code")                        #merge dataframes
 merged.2013 <- merge(2013stats, stats.new, 
                      by.x="Country.Code", by.y="Code")
 
-qplot(data=merged.1960,x=Fertility.Rate,y=Life.Expectancy,        #plotting graph by countries (1960)
+qplot(data=merged.1960,x=Fertility.Rate,y=Life.Expectancy,                    #plotting graph by countries (1960)
       colour=Region,size=I(3),shape=I(19), alpha=I(0.5),
       main="Fertility Rate vs Life Expectancy at Birth (1960)")
 
-qplot(data=merged.2013,x=Fertility.Rate,y=Life.Expectancy,        #plotting graph by countries (2013)
+qplot(data=merged.2013,x=Fertility.Rate,y=Life.Expectancy,                    #plotting graph by countries (2013)
       colour=Region,size=I(3),shape=I(19), alpha=I(0.5),
       main="Fertility Rate vs Life Expectancy at Birth (2013)")
       
